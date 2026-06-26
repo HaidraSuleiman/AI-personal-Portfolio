@@ -7,9 +7,9 @@ function Hero() {
     <section className="section hero" id="home">
       <div className="hero-content">
         <p className="hero-kicker">AI Engineer & Software Engineer</p>
-        <h1 className="hero-title">
+        <h2 className="hero-title">
           Building reliable AI agents and developer-friendly systems.
-        </h1>
+        </h2>
         <p className="hero-subtitle">
           I design and implement AI agents, RAG pipelines, and modern web apps,
           focusing on robustness, observability, and great developer experience.
@@ -47,7 +47,7 @@ function About() {
       <div className="section-header">
         <h2>About</h2>
         <p>
-          I'm Haidra Suleiman, a software engineer based in Cardiff, Wales,
+          I'm Haidra Suleiman, a software engineer
           specialising in AI engineering and agentic systems.
         </p>
       </div>
@@ -209,7 +209,7 @@ function Contact() {
                 github.com/HaidraSuleiman
               </a>
             </li>
-            <li>Location: Cardiff, Wales, United Kingdom</li>
+            
           </ul>
         </div>
         <div>
@@ -230,7 +230,7 @@ function Navbar() {
     <header className="navbar">
       <div className="navbar-inner">
         <div className="logo">
-          <span>Haidra Suleiman</span>
+          <h1>Haidra Suleiman</h1>
         </div>
         <nav className="nav-links">
           <a href="#home">Home</a>
