@@ -24,6 +24,14 @@ function Hero() {
           >
             View GitHub
           </a>
+          <a
+            href="https://www.linkedin.com/in/haidra-suleiman-960677212"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
+            Visit LinkedIn
+          </a>
           <a href="#projects" className="btn btn-outline">
             Explore AI projects
           </a>
