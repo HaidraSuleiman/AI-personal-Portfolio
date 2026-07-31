@@ -133,14 +133,26 @@ function Projects() {
                 {project.tech.join(' · ')}
               </span>
             </div>
-            <a
-              href={project.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link"
-            >
-              View repository
-            </a>
+            <div className="project-links">
+              {project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link project-link-primary"
+                >
+                  View live demo
+                </a>
+              )}
+              <a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link"
+              >
+                View repository
+              </a>
+            </div>
           </article>
         ))}
       </div>

@@ -212,8 +212,16 @@ body {
   color: var(--text-muted);
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
 .project-link {
-  margin-top: var(--space-2);
   font-size: 0.9rem;
   color: var(--primary);
   text-decoration: none;
@@ -221,6 +229,18 @@ body {
 
 .project-link:hover {
   text-decoration: underline;
+}
+
+.project-link-primary {
+  padding: var(--space-2) var(--space-4);
+  color: #fff;
+  background: var(--primary);
+  border-radius: var(--radius-md);
+}
+
+.project-link-primary:hover {
+  background: var(--primary-hover);
+  text-decoration: none;
 }
 
 .timeline {
