@@ -348,6 +348,21 @@ body {
   margin-bottom: 0.4rem;
 }
 
+.contact-list a {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.1rem 0.3rem;
+  margin: -0.1rem -0.3rem;
+  border-radius: 6px;
+  transition: color 160ms ease, background 160ms ease;
+}
+
+.contact-list a:hover {
+  color: var(--primary-hover);
+  background: rgba(1, 105, 111, 0.09);
+}
+
 .footer {
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   padding: var(--space-4);
