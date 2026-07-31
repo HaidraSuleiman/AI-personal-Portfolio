@@ -35,6 +35,13 @@ function Hero() {
           <a href="#projects" className="btn btn-outline">
             Explore AI projects
           </a>
+          <a
+            href="/Haidra-Suleiman-CV.pdf"
+            download="Haidra-Suleiman-CV.pdf"
+            className="btn btn-outline"
+          >
+            Download CV
+          </a>
         </div>
       </div>
     </section>
