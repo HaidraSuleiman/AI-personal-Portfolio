@@ -17,6 +17,28 @@ function Hero() {
 
         <div className="hero-actions">
           <a
+            href="/Haidra-Suleiman-CV.pdf"
+            download="Haidra-Suleiman-CV.pdf"
+            className="btn btn-cta"
+          >
+            <svg
+              className="btn-cta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download CV
+          </a>
+          <a
             href="https://github.com/HaidraSuleiman?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
@@ -35,13 +57,6 @@ function Hero() {
           <a href="#projects" className="btn btn-outline">
             Explore AI projects
           </a>
-          <a
-            href="/Haidra-Suleiman-CV.pdf"
-            download="Haidra-Suleiman-CV.pdf"
-            className="btn btn-outline"
-          >
-            Download CV
-          </a>
         </div>
       </div>
     </section>
@@ -54,26 +69,64 @@ function About() {
       <div className="section-header">
         <h2>About</h2>
         <p>
-          I'm Haidra Suleiman, a software engineer
-          specialising in AI engineering and agentic systems.
+          I'm Haidra Suleiman, a software engineer specialising in AI
+          engineering and agentic systems.
         </p>
       </div>
       <div className="section-body">
         <p>
-          My work spans from building hotel information agents and documentation
-          helpers, to experimenting with corrective RAG strategies and
-          reflection-based agents. I care about translating cutting-edge research
-          into practical systems that teams can deploy, monitor, and iterate on.
+          I build AI systems end to end — from LLM-powered backends and
+          retrieval pipelines to the interfaces people use them through — and I
+          ship them to production. Recent work includes a multilingual invoice
+          review platform that combines document intelligence with structured
+          LLM extraction and deterministic finance checks, deployed on Azure,
+          and a source-grounded research assistant that uses hybrid vector and
+          full-text retrieval to give analysts citable answers over large
+          document collections.
         </p>
         <p>
-          I enjoy connecting strong engineering fundamentals with AI workflows:
-          clean APIs around LLMs, reproducible pipelines, and tooling that lets
-          teams ship AI features confidently.
+          Beyond shipped products, I actively explore the agentic frontier:
+          corrective and self-adaptive RAG strategies, reflection-based agents,
+          LangGraph workflows, and MCP integrations. What ties it all together
+          is an engineering mindset — clean APIs around LLMs, human-in-the-loop
+          workflows where they matter, and systems that teams can deploy,
+          observe, and iterate on with confidence.
         </p>
       </div>
     </section>
   );
 }
+
+const skillCards = [
+  {
+    title: 'AI & LLM Engineering',
+    description:
+      'Designing agentic systems and RAG pipelines end to end — from corrective and self-adaptive retrieval strategies to ReAct and Reflexion agents, hallucination detection, and human-in-the-loop review workflows.',
+    stack:
+      'LangChain · LangGraph · OpenAI & Azure OpenAI · Azure Document Intelligence · Prompt engineering · Structured outputs · Embeddings & hybrid retrieval · MCP · LLM evaluation',
+  },
+  {
+    title: 'Backend & API Engineering',
+    description:
+      'Building clean, production-oriented Python backends around LLM and data services, with typed models, versioned schemas, and REST APIs designed for real product workflows.',
+    stack:
+      'Python · FastAPI · Pydantic · SQLAlchemy · Alembic · Async Python · REST API design',
+  },
+  {
+    title: 'Frontend & React Applications',
+    description:
+      'Shipping the interfaces AI products are used through — responsive React single-page apps with typed components, from review dashboards to chat experiences.',
+    stack:
+      'React · TypeScript · JavaScript · Vite · Next.js · Tailwind CSS · Responsive design',
+  },
+  {
+    title: 'Data, Cloud & Deployment',
+    description:
+      'Owning the path to production: vector and relational storage, ingestion pipelines, containerised deployments, and cloud hosting with persistent storage and auth.',
+    stack:
+      'PostgreSQL & pgvector · Supabase · SQLite · ChromaDB · Pinecone · Docker · Azure Container Apps · Railway · Git & GitHub',
+  },
+];
 
 function Skills() {
   return (
@@ -81,38 +134,18 @@ function Skills() {
       <div className="section-header">
         <h2>Skills</h2>
         <p>
-          A blend of AI engineering, MLOps, and full-stack development skills
-          tailored for modern AI-powered products.
+          The full stack I work with — from LLM orchestration and retrieval to
+          backend services, databases, and cloud deployment.
         </p>
       </div>
       <div className="skills-grid">
-        <div className="skills-card">
-          <h3>AI Engineering</h3>
-          <ul>
-            <li>LLM prompting & agent design</li>
-            <li>Retrieval-augmented generation (RAG)</li>
-            <li>LangGraph & agent frameworks</li>
-            <li>Evaluation & debugging of LLM systems</li>
-          </ul>
-        </div>
-        <div className="skills-card">
-          <h3>MLOps & Data</h3>
-          <ul>
-            <li>Python data pipelines</li>
-            <li>Vector search & embeddings</li>
-            <li>Experiment tracking & logging</li>
-            <li>API design around ML services</li>
-          </ul>
-        </div>
-        <div className="skills-card">
-          <h3>Software Engineering</h3>
-          <ul>
-            <li>React & modern front-end</li>
-            <li>TypeScript & JavaScript</li>
-            <li>RESTful APIs and integrations</li>
-            <li>Testing and code quality</li>
-          </ul>
-        </div>
+        {skillCards.map((card) => (
+          <div key={card.title} className="skills-card">
+            <h3>{card.title}</h3>
+            <p className="skills-card-description">{card.description}</p>
+            <p className="skills-card-stack">{card.stack}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -179,22 +212,41 @@ function Experience() {
       </div>
       <div className="timeline">
         <div className="timeline-item">
+          <h3>IT Engineer – Data Science & AI</h3>
+          <h4>Welbond Armatures</h4>
+          <p className="timeline-period">2021 – Present</p>
+          <ul className="timeline-list">
+            <li>
+              Develop AI and data science applications using Python, machine
+              learning, and data engineering principles.
+            </li>
+            <li>
+              Build data pipelines, retrieval systems, and automated workflows
+              for data processing and analysis.
+            </li>
+            <li>
+              Apply statistical methods, data visualisation, and predictive
+              modelling to solve business problems.
+            </li>
+            <li>
+              Develop and support web-based solutions that improve workflows,
+              automation, and system accessibility.
+            </li>
+            <li>
+              Deliver end-to-end technical solutions integrating data
+              processing, analytics, and AI technologies, while supporting
+              scalable infrastructure across multiple domains.
+            </li>
+          </ul>
+        </div>
+        <div className="timeline-item">
           <h3>AI Engineering Projects (Personal & Open Source)</h3>
           <p className="timeline-period">Ongoing</p>
           <p>
-            Building and maintaining AI agents and RAG systems, from hotel
-            information assistants to documentation helpers, reflexion agents and
-            LangGraph-based workflows.
-          </p>
-        </div>
-        <div className="timeline-item">
-          <h3>IT Engineer</h3>
-          <h4>Welbond Armatures</h4>
-          <p className="timeline-period">2023 – Present</p>
-          <p>
-          Full-Time Position: Provided first- and second-line IT support across hardware, software, and networking environments
-Diagnosed and resolved technical issues to minimise downtime and maintain business continuity
-Portfolio Development: Continuously update my portfolio with professional and personal projects.
+            Designing, shipping, and maintaining production-grade AI systems:
+            document intelligence platforms, source-grounded research
+            assistants, corrective and adaptive RAG architectures, and
+            LangGraph-based agent workflows — deployed on Azure and Railway.
           </p>
         </div>
       </div>
