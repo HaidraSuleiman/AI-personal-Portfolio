@@ -114,6 +114,7 @@ function TwinChat() {
         <form className="twin-input-row" onSubmit={handleSubmit}>
           <input
             ref={inputRef}
+            id="twin-input"
             type="text"
             className="twin-input"
             placeholder="Ask about my experience, projects, or skills..."

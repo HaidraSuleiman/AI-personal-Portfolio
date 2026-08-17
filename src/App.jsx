@@ -1,7 +1,17 @@
 import './app.css';
 import { projects } from './data/projects';
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TwinChat from './components/TwinChat';
+
+function scrollToTwin(event) {
+  const section = document.getElementById('twin');
+  if (!section) return;
+  event?.preventDefault();
+  section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  window.setTimeout(() => {
+    document.getElementById('twin-input')?.focus({ preventScroll: true });
+  }, 450);
+}
 
 function Hero() {
   return (
@@ -17,6 +27,22 @@ function Hero() {
         </p>
 
         <div className="hero-actions">
+          <a href="#twin" className="btn btn-cta" onClick={scrollToTwin}>
+            <svg
+              className="btn-cta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            Talk to my AI twin
+          </a>
           <a
             href="/Haidra-Suleiman-CV.pdf"
             download="Haidra-Suleiman-CV.pdf"
@@ -310,11 +336,51 @@ function Navbar() {
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
-          <a href="#twin">AI Twin</a>
+          <a href="#twin" onClick={scrollToTwin}>AI Twin</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
+  );
+}
+
+function TwinChip() {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const section = document.getElementById('twin');
+    if (!section) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(!entry.isIntersecting),
+      { threshold: 0.25 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <a
+      href="#twin"
+      className={`twin-chip${visible ? '' : ' twin-chip-hidden'}`}
+      onClick={scrollToTwin}
+      aria-hidden={!visible}
+      tabIndex={visible ? 0 : -1}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      </svg>
+      Ask my AI twin
+    </a>
   );
 }
 
@@ -334,6 +400,7 @@ function App() {
       <footer className="footer">
         <p>© {new Date().getFullYear()} Haidra Suleiman. AI Engineering Portfolio.</p>
       </footer>
+      <TwinChip />
     </div>
   );
 }
