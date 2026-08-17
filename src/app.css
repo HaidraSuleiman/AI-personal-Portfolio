@@ -363,6 +363,196 @@ body {
   background: rgba(1, 105, 111, 0.09);
 }
 
+.twin-chat {
+  margin-top: var(--space-6);
+  background: var(--surface);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.twin-messages {
+  height: 420px;
+  overflow-y: auto;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.twin-empty {
+  margin: auto;
+  max-width: 560px;
+  text-align: center;
+}
+
+.twin-empty-title {
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.twin-examples {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.twin-example {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(1, 105, 111, 0.3);
+  background: transparent;
+  color: var(--primary);
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.twin-example:hover {
+  background: var(--primary);
+  color: #fdfdfc;
+}
+
+.twin-message {
+  max-width: 85%;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  overflow-wrap: break-word;
+}
+
+.twin-message-user {
+  align-self: flex-end;
+  background: var(--primary);
+  color: #fdfdfc;
+  border-bottom-right-radius: 0.2rem;
+}
+
+.twin-message-assistant {
+  align-self: flex-start;
+  background: rgba(1, 105, 111, 0.07);
+  border-bottom-left-radius: 0.2rem;
+}
+
+.twin-message-assistant p {
+  margin: 0 0 0.5rem;
+}
+
+.twin-message-assistant p:last-child,
+.twin-message-assistant ul:last-child,
+.twin-message-assistant ol:last-child {
+  margin-bottom: 0;
+}
+
+.twin-message-assistant ul,
+.twin-message-assistant ol {
+  margin: 0 0 0.5rem;
+  padding-left: 1.2rem;
+}
+
+.twin-message-assistant a {
+  color: var(--primary);
+}
+
+.twin-typing {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.85rem 0.9rem;
+}
+
+.twin-typing span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.4;
+  animation: twin-typing-bounce 1.2s ease-in-out infinite;
+}
+
+.twin-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.twin-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes twin-typing-bounce {
+  0%,
+  60%,
+  100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+.twin-error {
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  color: #a4433a;
+  font-size: 0.85rem;
+}
+
+.twin-input-row {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4) var(--space-4);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: var(--space-2);
+}
+
+.twin-input {
+  flex: 1;
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: var(--bg);
+  color: var(--text);
+  outline: none;
+  transition: border-color 160ms ease;
+}
+
+.twin-input:focus {
+  border-color: var(--primary);
+}
+
+.twin-input:disabled {
+  opacity: 0.6;
+}
+
+.twin-send {
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: var(--primary);
+  color: #fdfdfc;
+  cursor: pointer;
+  transition: background 160ms ease;
+}
+
+.twin-send:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.twin-send:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 .footer {
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   padding: var(--space-4);

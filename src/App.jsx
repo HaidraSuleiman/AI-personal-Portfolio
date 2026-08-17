@@ -1,6 +1,7 @@
 import './app.css';
 import { projects } from './data/projects';
 import React from "react";
+import TwinChat from './components/TwinChat';
 
 function Hero() {
   return (
@@ -309,6 +310,7 @@ function Navbar() {
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
+          <a href="#twin">AI Twin</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -326,6 +328,7 @@ function App() {
         <Skills />
         <Projects />
         <Experience />
+        <TwinChat />
         <Contact />
       </main>
       <footer className="footer">
