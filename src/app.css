@@ -379,6 +379,17 @@ body {
   background: rgba(1, 105, 111, 0.09);
 }
 
+.section-header .twin-notify-note {
+  margin-top: var(--space-4);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary);
+  background: rgba(1, 105, 111, 0.1);
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
 .twin-chat {
   margin-top: var(--space-6);
   background: var(--surface);

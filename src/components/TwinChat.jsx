@@ -66,6 +66,10 @@ function TwinChat() {
           A digital twin of me, powered by an LLM agent with my career context.
           Ask it anything about my background, skills, and experience.
         </p>
+        <p className="twin-notify-note">
+          Leave your name and email in the chat and I will get a notification
+          that you want to get in touch.
+        </p>
       </div>
 
       <div className="twin-chat">
